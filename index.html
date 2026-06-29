@@ -531,6 +531,10 @@
             }
             .hero-content { max-width: 100%; }
             .hero-content h1 { font-size: 2.2rem; }
+            .hero-content,
+            .hero-content h1,
+            .hero-content p,
+            .section-title { overflow-wrap: anywhere; }
             .hero-content p { margin: 0 auto; font-size: 1.1rem; }
 
             .trust-block { flex-direction: column; gap: 20px; text-align: center; }
@@ -555,6 +559,7 @@
             .dropdown-menu,
             .nav-item:last-child .dropdown-menu {
                 position: static;
+                display: none;
                 min-width: 0;
                 width: 100%;
                 margin-top: 8px;
@@ -565,6 +570,8 @@
                 box-shadow: none;
             }
             .dropdown-menu::before { display: none; }
+            .nav-item.is-open .dropdown-menu,
+            .nav-item.is-open:last-child .dropdown-menu { display: block; }
             .dropdown-submenu a { padding-left: 20px; }
             .header-actions {
                 order: 4;
@@ -609,13 +616,13 @@
             <div class="nav-item">
                 <button class="nav-trigger" type="button">О системе <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                 <div class="dropdown-menu">
-                    <a href="#about">О системе</a>
-                    <a href="#cert-products">Сертификация продукции</a>
-                    <a href="#cert-services">Сертификация работ и услуг</a>
-                    <a href="#cert-qms">Сертификация СМК</a>
-                    <a href="#regulatory-base">Нормативная база</a>
-                    <a href="#appeals">Жалобы/апелляции</a>
-                    <a href="#mark-rules">Правила применения знака</a>
+                    <a href="about-system.html">О системе</a>
+                    <a href="product-certification.html">Сертификация продукции</a>
+                    <a href="services-certification.html">Сертификация работ и услуг</a>
+                    <a href="qms-certification.html">Сертификация СМК</a>
+                    <a href="regulatory-base.html">Нормативная база</a>
+                    <a href="appeals.html">Жалобы/апелляции</a>
+                    <a href="mark-rules.html">Правила применения знака</a>
                 </div>
             </div>
             <div class="nav-item">
@@ -624,17 +631,17 @@
                     <div class="dropdown-group">
                         <div class="dropdown-group-title">Участники Системы</div>
                         <div class="dropdown-submenu">
-                            <a href="#registry-certification-bodies">Органы по сертификации</a>
-                            <a href="#registry-labs">Испытательные лаборатории</a>
-                            <a href="#registry-training-centers">Учебные центры</a>
+                            <a href="registry-certification-bodies.html">Органы по сертификации</a>
+                            <a href="registry-labs.html">Испытательные лаборатории</a>
+                            <a href="registry-training-centers.html">Учебные центры</a>
                         </div>
                     </div>
                     <div class="dropdown-group">
                         <div class="dropdown-group-title">Сертификаты соответствия</div>
                         <div class="dropdown-submenu">
-                            <a href="#registry-product-certificates">Продукция</a>
-                            <a href="#registry-service-certificates">Работы и услуги</a>
-                            <a href="#registry-qms-certificates">Системы менеджмента</a>
+                            <a href="registry-product-certificates.html">Продукция</a>
+                            <a href="registry-service-certificates.html">Работы и услуги</a>
+                            <a href="registry-qms-certificates.html">Системы менеджмента</a>
                         </div>
                     </div>
                 </div>
@@ -869,6 +876,34 @@
         }
         window.addEventListener("scroll", reveal);
         reveal();
+
+        document.querySelectorAll(".nav-trigger").forEach(function(trigger) {
+            trigger.setAttribute("aria-expanded", "false");
+            trigger.addEventListener("click", function() {
+                var navItem = trigger.closest(".nav-item");
+                if (!navItem) return;
+                var shouldOpen = !navItem.classList.contains("is-open");
+                document.querySelectorAll(".nav-item.is-open").forEach(function(openItem) {
+                    if (openItem !== navItem) {
+                        openItem.classList.remove("is-open");
+                        var openTrigger = openItem.querySelector(".nav-trigger");
+                        if (openTrigger) openTrigger.setAttribute("aria-expanded", "false");
+                    }
+                });
+                navItem.classList.toggle("is-open", shouldOpen);
+                trigger.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            });
+        });
+
+        document.querySelectorAll(".dropdown-menu a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                document.querySelectorAll(".nav-item.is-open").forEach(function(openItem) {
+                    openItem.classList.remove("is-open");
+                    var openTrigger = openItem.querySelector(".nav-trigger");
+                    if (openTrigger) openTrigger.setAttribute("aria-expanded", "false");
+                });
+            });
+        });
 
         function sendMail(subject, lines) {
             var body = lines.filter(Boolean).join("\n");
