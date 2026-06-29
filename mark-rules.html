@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила применения знака | СДС Ex-инспекция</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --topbar-bg: #25313d;
+            --hero-bg: #18222d;
+            --accent: #2b78b8;
+            --accent-glow: rgba(43, 120, 184, 0.22);
+            --gold-accent: #c79a3b;
+            --text-dark: #202a33;
+            --text-light: #ffffff;
+            --text-muted: #6d7985;
+            --bg-light: #f3f5f7;
+            --bg-white: #ffffff;
+            --line: #dde4ea;
+            --transition: all 0.22s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--bg-white);
+        }
+
+        .bg-light-section { background-color: var(--bg-light); }
+
+        .top-bar {
+            background-color: var(--topbar-bg);
+            color: var(--text-light);
+            padding: 8px 5%;
+            display: flex;
+            justify-content: center;
+            font-size: 0.85rem;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .top-bar a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover { color: var(--accent); }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--line);
+            box-shadow: 0 2px 10px rgba(20, 31, 43, 0.04);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            display: block;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-main { height: 62px; max-width: 235px; }
+        .logo-ex-system { height: 76px; max-width: 100px; }
+        .logo-separator { color: var(--hero-bg); font-size: 1.1rem; font-weight: 800; opacity: 0.55; }
+
+        .nav-links { display: flex; align-items: center; gap: 26px; }
+        .nav-item { position: relative; }
+
+        .nav-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 0;
+            background: transparent;
+            color: var(--text-dark);
+            font: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 12px 0;
+            transition: var(--transition);
+        }
+
+        .nav-trigger i { font-size: 0.72rem; transition: var(--transition); }
+        .nav-item:hover .nav-trigger,
+        .nav-item:focus-within .nav-trigger { color: var(--accent); }
+        .nav-item:hover .nav-trigger i,
+        .nav-item:focus-within .nav-trigger i { transform: rotate(180deg); }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            min-width: 285px;
+            background: var(--bg-white);
+            border: 0;
+            border-radius: 6px;
+            box-shadow: 0 18px 40px rgba(20, 31, 43, 0.14);
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition: var(--transition);
+            z-index: 1200;
+        }
+
+        .nav-item:last-child .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+
+        .nav-item:hover .dropdown-menu,
+        .nav-item:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -12px;
+            height: 12px;
+        }
+
+        .dropdown-menu a,
+        .dropdown-group-title {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            line-height: 1.35;
+            transition: var(--transition);
+        }
+
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
+            background: var(--bg-light);
+            color: var(--accent);
+            outline: none;
+        }
+
+        .dropdown-group {
+            border-top: 1px solid #e4ebf1;
+            margin-top: 6px;
+            padding-top: 6px;
+        }
+
+        .dropdown-group:first-child {
+            border-top: 0;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .dropdown-group-title {
+            color: var(--hero-bg);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .dropdown-submenu a { padding-left: 26px; color: var(--text-muted); }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text-light);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: #205f91;
+            border-color: #205f91;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.58);
+            color: var(--text-light);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .btn-secondary {
+            background: var(--bg-light);
+            color: var(--hero-bg);
+            border: 1px solid var(--line);
+        }
+
+        .btn-secondary:hover {
+            background: #e7eef4;
+            border-color: #cbd8e3;
+            color: var(--accent);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-actions .btn {
+            padding: 10px 16px;
+            font-size: 0.88rem;
+            box-shadow: none;
+            white-space: nowrap;
+        }
+
+        .page-hero {
+            background-color: var(--hero-bg);
+            background-image: linear-gradient(90deg, rgba(24, 34, 45, 0.98) 0%, rgba(24, 34, 45, 0.90) 47%, rgba(24, 34, 45, 0.56) 100%), url("assets/hero-ex-equipment.webp");
+            background-position: center right;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: var(--text-light);
+            padding: 88px 5% 96px;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #c8d4df;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a {
+            color: #dce6ee;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover { color: var(--accent); }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: #dce6ee;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            margin-bottom: 18px;
+        }
+
+        .eyebrow i { color: var(--accent); }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.12;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .page-hero p {
+            color: #d3dde6;
+            font-size: 1.13rem;
+            max-width: 760px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .trust-strip {
+            background: var(--bg-white);
+            padding: 34px 5%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 700;
+            color: var(--hero-bg);
+        }
+
+        .trust-item i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        section { padding: 88px 5%; }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.28rem;
+            color: var(--hero-bg);
+            margin-bottom: 48px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .section-title span { color: var(--accent); }
+
+        .section-lead {
+            max-width: 940px;
+            margin: -24px auto 46px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.06rem;
+        }
+
+        .content-wrap {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+        }
+
+        .intro-panel {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .intro-copy,
+        .registration-card,
+        .info-card,
+        .scope-card,
+        .task-card,
+        .result-card,
+        .audience-card {
+            background: var(--bg-white);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            box-shadow: 0 10px 24px rgba(20, 31, 43, 0.04);
+        }
+
+        .intro-copy {
+            padding: 38px;
+            font-size: 1.03rem;
+        }
+
+        .intro-copy p + p { margin-top: 18px; }
+
+        .registration-card {
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .registration-card i {
+            color: var(--accent);
+            font-size: 2.4rem;
+            margin-bottom: 22px;
+        }
+
+        .registration-card h2 {
+            color: var(--hero-bg);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .registration-number {
+            color: var(--hero-bg);
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-top: 18px;
+        }
+
+        .scope-grid,
+        .tasks-grid,
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .scope-card {
+            min-height: 100%;
+            padding: 32px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border-bottom: 3px solid #cfd8e1;
+            transition: var(--transition);
+        }
+
+        .scope-card:hover,
+        .scope-card:focus {
+            transform: translateY(-4px);
+            border-color: #c7d4df;
+            border-bottom-color: var(--accent);
+            box-shadow: 0 14px 28px rgba(20,31,43,0.08);
+            outline: none;
+        }
+
+        .scope-card i,
+        .task-card i,
+        .result-card i {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 22px;
+        }
+
+        .scope-card h3,
+        .task-card h3,
+        .result-card h3,
+        .audience-card h3 {
+            color: var(--hero-bg);
+            font-size: 1.12rem;
+            margin-bottom: 12px;
+        }
+
+        .scope-card p,
+        .task-card p,
+        .result-card p,
+        .audience-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 22px;
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .tasks-grid { grid-template-columns: repeat(3, 1fr); }
+
+        .task-card,
+        .result-card {
+            padding: 28px;
+            min-height: 100%;
+        }
+
+        .task-card {
+            border-left: 4px solid var(--accent);
+            box-shadow: none;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .audience-card {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 18px;
+        }
+
+        .audience-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            color: var(--accent);
+            background: var(--bg-light);
+            font-size: 1.45rem;
+        }
+
+        .audience-card strong {
+            display: block;
+            color: var(--text-dark);
+            margin-top: 14px;
+            font-size: 0.95rem;
+        }
+
+        .results-grid { grid-template-columns: repeat(3, 1fr); }
+
+        .result-card {
+            border-top: 3px solid var(--accent);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--text-light);
+            font-weight: 900;
+        }
+
+        .document-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            list-style: none;
+        }
+
+        .document-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-dark);
+            font-size: 0.97rem;
+        }
+
+        .document-list i {
+            color: var(--accent);
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .document-list + p,
+        .intro-copy p + .document-list {
+            margin-top: 24px;
+        }
+
+        .steps-list {
+            grid-template-columns: 1fr;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .wide-info-card {
+            width: 100%;
+        }
+
+        .wide-info-card p {
+            text-align: justify;
+        }
+
+        .wide-info-card h2 {
+            text-align: center;
+        }
+
+        .centered-action {
+            display: flex;
+            justify-content: center;
+            margin-top: 26px;
+        }
+
+        .centered-title {
+            text-align: center;
+        }
+
+        .notice-card {
+            background: var(--bg-white);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--gold-accent);
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 10px 24px rgba(20, 31, 43, 0.04);
+        }
+
+        .notice-card h3 {
+            color: var(--hero-bg);
+            font-size: 1.18rem;
+            margin-bottom: 12px;
+        }
+
+        .notice-card p {
+            color: var(--text-dark);
+            margin-bottom: 0;
+        }
+
+        .info-card {
+            padding: 38px;
+        }
+
+        .info-card h2 {
+            color: var(--hero-bg);
+            font-size: 1.7rem;
+            line-height: 1.25;
+            margin-bottom: 18px;
+        }
+
+        .info-card p {
+            color: var(--text-dark);
+            margin-bottom: 18px;
+        }
+
+        .info-card p:last-child { margin-bottom: 0; }
+
+        .mark-signs-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .mark-sign-card {
+            min-height: 300px;
+            padding: 30px;
+            background: var(--bg-white);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            box-shadow: 0 10px 24px rgba(20, 31, 43, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mark-sign-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: 340px;
+            object-fit: contain;
+        }
+
+        .mark-sign-card.is-vertical img {
+            max-height: 360px;
+            width: auto;
+        }
+
+        .examples-table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--bg-white);
+            box-shadow: 0 10px 24px rgba(20, 31, 43, 0.04);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 860px;
+        }
+
+        th,
+        td {
+            padding: 22px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid var(--line);
+        }
+
+        th {
+            background: var(--hero-bg);
+            color: var(--text-light);
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        td {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td { border-bottom: 0; }
+
+        .cta-section {
+            background-color: var(--hero-bg);
+            background-image: linear-gradient(90deg, rgba(24, 34, 45, 0.98), rgba(24, 34, 45, 0.9)), url("assets/hero-ex-equipment.webp");
+            background-position: center right;
+            background-size: cover;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .cta-section .section-title {
+            color: var(--text-light);
+            margin-bottom: 22px;
+        }
+
+        .cta-section p {
+            max-width: 880px;
+            margin: 0 auto 30px;
+            color: #d3dde6;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            background-color: var(--hero-bg);
+            color: var(--text-light);
+            padding: 70px 5% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: minmax(230px, 0.85fr) minmax(320px, 1.15fr) minmax(280px, 1fr);
+            gap: 40px;
+            align-items: stretch;
+            margin-bottom: 50px;
+        }
+
+        .footer-stack {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 34px;
+            height: 100%;
+        }
+
+        .footer-col h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            color: #d1d8e0;
+            text-decoration: none;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .footer-address {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 0;
+        }
+
+        .footer-map {
+            width: 100%;
+            flex: 1;
+            min-height: 230px;
+            border: 0;
+            border-radius: 4px;
+            margin-top: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+            overflow: hidden;
+        }
+
+        .footer-col i {
+            color: var(--accent);
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .feedback-form {
+            margin: 0;
+            padding: 28px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+        }
+
+        .feedback-form h4 { margin-bottom: 18px; }
+
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 4px;
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            padding: 13px 15px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .feedback-form input:focus,
+        .feedback-form textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0,168,255,0.15);
+            background: rgba(255,255,255,0.11);
+        }
+
+        .feedback-form input::placeholder,
+        .feedback-form textarea::placeholder { color: rgba(255,255,255,0.58); }
+
+        .feedback-form textarea {
+            min-height: 128px;
+            resize: vertical;
+        }
+
+        .feedback-form .btn {
+            width: 100%;
+            border: 0;
+            cursor: pointer;
+            padding: 12px 16px;
+            white-space: normal;
+        }
+
+        .contact-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .contact-modal.is-open { display: flex; }
+
+        .modal-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 31, 0.68);
+        }
+
+        .contact-dialog {
+            position: relative;
+            z-index: 1;
+            width: min(620px, 100%);
+            max-height: calc(100vh - 48px);
+            overflow-y: auto;
+            background: var(--bg-white);
+            border-radius: 8px;
+            border: 1px solid #d8e2ea;
+            box-shadow: 0 28px 70px rgba(15, 23, 31, 0.28);
+            padding: 28px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: var(--bg-light);
+            color: var(--hero-bg);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+            border-color: #cbd8e3;
+        }
+
+        .modal-title {
+            color: var(--hero-bg);
+            font-size: 1.45rem;
+            line-height: 1.25;
+            margin-bottom: 8px;
+            padding-right: 42px;
+        }
+
+        .modal-text {
+            color: var(--text-muted);
+            font-size: 0.96rem;
+            margin-bottom: 22px;
+            max-width: 500px;
+        }
+
+        .modal-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .modal-tab {
+            border: 1px solid var(--line);
+            background: var(--bg-light);
+            color: var(--hero-bg);
+            border-radius: 4px;
+            padding: 11px 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-tab.is-active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-light);
+        }
+
+        .modal-form {
+            display: none;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .modal-form.is-active { display: grid; }
+
+        .modal-form input,
+        .modal-form select,
+        .modal-form textarea {
+            width: 100%;
+            border: 1px solid #d4dee7;
+            border-radius: 4px;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            font-family: inherit;
+            font-size: 0.95rem;
+            padding: 13px 14px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .modal-form input:focus,
+        .modal-form select:focus,
+        .modal-form textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .modal-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .modal-form .btn {
+            width: 100%;
+            padding: 13px 16px;
+        }
+
+        body.modal-open { overflow: hidden; }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1400px) {
+            .logo { gap: 14px; }
+            .logo-main { height: 56px; max-width: 215px; }
+            .logo-ex-system { height: 68px; max-width: 90px; }
+            .page-hero h1 { font-size: 2.75rem; }
+        }
+
+        @media (max-width: 1200px) {
+            .logo-main { height: 50px; max-width: 190px; }
+            .logo-ex-system { height: 60px; max-width: 80px; }
+            .nav-links { gap: 18px; }
+            .dropdown-menu { min-width: 265px; }
+            .header-actions .btn { padding: 10px 13px; font-size: 0.84rem; }
+            .page-hero h1 { font-size: 2.5rem; }
+            .scope-grid,
+            .tasks-grid,
+            .mark-signs-grid,
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 992px) {
+            .intro-panel { grid-template-columns: 1fr; }
+            .audience-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .logo {
+                justify-content: center;
+                flex: 1 1 100%;
+                gap: 10px;
+            }
+
+            .logo-main { height: 38px; max-width: 145px; }
+            .logo-ex-system { height: 48px; max-width: 64px; }
+            .logo-separator { font-size: 0.9rem; }
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 100%;
+                width: 100%;
+                align-items: stretch;
+                gap: 12px;
+                order: 3;
+            }
+
+            .nav-item { width: 100%; }
+
+            .nav-trigger {
+                width: 100%;
+                justify-content: space-between;
+                padding: 10px 12px;
+                border: 1px solid var(--line);
+                border-radius: 4px;
+                background: var(--bg-light);
+            }
+
+            .dropdown-menu,
+            .nav-item:last-child .dropdown-menu {
+                position: static;
+                display: none;
+                min-width: 0;
+                width: 100%;
+                margin-top: 8px;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: none;
+                box-shadow: none;
+            }
+
+            .dropdown-menu::before { display: none; }
+            .nav-item.is-open .dropdown-menu,
+            .nav-item.is-open:last-child .dropdown-menu { display: block; }
+            .dropdown-submenu a { padding-left: 20px; }
+
+            .header-actions {
+                order: 4;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .header-actions .btn {
+                flex: 1 1 180px;
+                max-width: 260px;
+            }
+
+            .page-hero {
+                min-height: auto;
+                padding: 64px 5% 76px;
+                text-align: center;
+                background-image: linear-gradient(180deg, rgba(24, 34, 45, 0.98) 0%, rgba(24, 34, 45, 0.9) 100%), url("assets/hero-ex-equipment.webp");
+                background-position: center;
+            }
+
+            .page-hero h1 { font-size: 2.05rem; }
+            .page-hero-content { min-width: 0; max-width: 100%; }
+            .page-hero h1,
+            .page-hero p,
+            .section-title { overflow-wrap: anywhere; }
+            .eyebrow {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .page-hero p { margin-left: auto; margin-right: auto; }
+            .hero-actions { justify-content: center; }
+            .hero-actions .btn {
+                max-width: 100%;
+                white-space: normal;
+            }
+            .breadcrumb { justify-content: center; }
+
+            .trust-strip,
+            .scope-grid,
+            .tasks-grid,
+            .mark-signs-grid,
+            .results-grid { grid-template-columns: 1fr; }
+
+            .trust-item { justify-content: center; text-align: center; }
+            section { padding: 68px 5%; }
+            .section-title { font-size: 1.9rem; }
+            .intro-copy,
+            .registration-card,
+            .info-card,
+            .scope-card,
+            .task-card,
+            .result-card { padding: 24px; }
+
+            .audience-card {
+                grid-template-columns: 1fr;
+                padding: 24px;
+            }
+
+            .contact-modal { padding: 14px; align-items: flex-start; }
+            .contact-dialog { padding: 24px 18px; max-height: calc(100vh - 28px); }
+            .modal-tabs { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; align-items: start; }
+            .footer-stack { gap: 30px; height: auto; }
+            .footer-address { height: auto; }
+            .footer-map { height: 260px; flex: none; }
+            .feedback-form { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <span>Связаться с нами: <a href="tel:+74958774225"><i class="fas fa-phone"></i> +7 (495) 877-42-25</a> | <a href="mailto:info@endce.ru"><i class="fas fa-envelope"></i> info@endce.ru</a></span>
+    </div>
+
+    <header>
+        <a class="logo" href="index.html" aria-label="На главную">
+            <img class="logo-main" src="assets/500-c323074f89fcf112e1da52f5a43741e3.png" alt="ENDCE.RU">
+            <span class="logo-separator" aria-hidden="true">X</span>
+            <img class="logo-ex-system" src="assets/Знак СДС Ех.jpg" alt="СДС Ex-инспекция">
+        </a>
+        <nav class="nav-links" aria-label="Основное меню">
+            <div class="nav-item">
+                <button class="nav-trigger" type="button">О системе <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="dropdown-menu">
+                    <a href="about-system.html">О системе</a>
+                    <a href="product-certification.html">Сертификация продукции</a>
+                    <a href="services-certification.html">Сертификация работ и услуг</a>
+                    <a href="qms-certification.html">Сертификация СМК</a>
+                    <a href="regulatory-base.html">Нормативная база</a>
+                    <a href="appeals.html">Жалобы/апелляции</a>
+                    <a href="mark-rules.html">Правила применения знака</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-trigger" type="button">Реестры <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="dropdown-menu">
+                    <div class="dropdown-group">
+                        <div class="dropdown-group-title">Участники Системы</div>
+                        <div class="dropdown-submenu">
+                            <a href="registry-certification-bodies.html">Органы по сертификации</a>
+                            <a href="registry-labs.html">Испытательные лаборатории</a>
+                            <a href="registry-training-centers.html">Учебные центры</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-group">
+                        <div class="dropdown-group-title">Сертификаты соответствия</div>
+                        <div class="dropdown-submenu">
+                            <a href="registry-product-certificates.html">Продукция</a>
+                            <a href="registry-service-certificates.html">Работы и услуги</a>
+                            <a href="registry-qms-certificates.html">Системы менеджмента</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-primary" type="button" data-modal-open="application"><i class="fas fa-file-signature"></i> Подать заявку</button>
+            <button class="btn btn-secondary" type="button" data-modal-open="question"><i class="fas fa-circle-question"></i> Задать вопрос</button>
+            <a href="#contacts" class="btn btn-secondary"><i class="fas fa-address-book"></i> Контакты</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <h1>Правила применения знака</h1>
+                <p>Знак используется для информирования потребителей и иных заинтересованных сторон о проведении сертификации в СДС «Ex-инспекция». Право на его применение предоставляется держателю сертификата органом по сертификации одновременно с началом срока действия сертификата и оформляется разрешением на право применения знака.</p>
+            </div>
+        </section>
+
+        <section class="reveal bg-light-section">
+            <div class="content-wrap">
+                <h2 class="section-title">Изображения <span>знака</span></h2>
+                <div class="mark-signs-grid">
+                    <div class="mark-sign-card">
+                        <img src="assets/Знак (1).png" alt="Знак соответствия СДС Ex-инспекция">
+                    </div>
+                    <div class="mark-sign-card is-vertical">
+                        <img src="assets/Знак СДС Ех.jpg" alt="Знак СДС Ex-инспекция">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <div class="content-wrap">
+                <h2 class="section-title">Кто и на каких условиях <span>может применять знак</span></h2>
+                <div class="intro-copy">
+                    <p>Право применения знака предоставляется организации - держателю сертификата СДС «Ex-инспекция». Использование допускается только в период действия сертификата, по отношению к сертифицированному объекту и с соблюдением утвержденного порядка применения знака.</p>
+                    <p>Знак используется на основании разрешения на право применения знака, выданного органом по сертификации.</p>
+                    <p>Знак относится только к продукции, работам, услугам или СМК в пределах области, указанной в сертификате.</p>
+                    <p>Материалы не должны создавать впечатление, что знаком подтверждены все процессы, вся продукция организации или обязательное соответствие, если это не следует из сертификата.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal bg-light-section">
+            <div class="content-wrap">
+                <h2 class="section-title">Где знак <span>можно размещать</span></h2>
+                <div class="intro-copy">
+                    <p>Применение знака допускается на документации (информационные материалы, технические описания, презентации, каталоги и иные документы), в информационно-рекламных материалах, на сайте держателя сертификата.</p>
+                </div>
+                <div class="notice-card" style="margin-top: 34px;">
+                    <h3>Запрещается</h3>
+                    <p>Запрещается использование знака без письменного разрешения органа по сертификации.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <div class="footer-grid">
+            <div class="footer-stack">
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> Общие вопросы: +7 (495) 877-42-25</p>
+                    <a href="mailto:info@endce.ru"><i class="fas fa-envelope"></i> info@endce.ru</a>
+                    <a href="https://t.me/endurance_msc" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Реквизиты</h4>
+                    <p>ООО СЦ "ЭНДЬЮРЕНС"</p>
+                    <p>ИНН 7725356818</p>
+                    <p>КПП 772501001</p>
+                    <a href="https://disk.yandex.ru/i/dVvF1ZghNkPDbQ" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: #fff; margin-top: 15px; padding: 8px 15px; font-size: 0.9rem;">Скачать карту партнера PDF</a>
+                </div>
+            </div>
+
+            <div class="footer-col footer-address">
+                <h4>Адрес</h4>
+                <p><i class="fas fa-map-marker-alt"></i> г. Москва, 2й Павелецкий проезд, д. 5, стр. 1.</p>
+                <iframe class="footer-map" src="https://yandex.ru/map-widget/v1/?ll=37.641089%2C55.721605&amp;mode=routes&amp;rtext=55.730500%2C37.637700~55.712710%2C37.644478&amp;rtt=pd&amp;ruri=~&amp;z=14" title="Пеший маршрут от метро Павелецкая до офиса" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <form class="footer-col feedback-form" id="feedbackForm">
+                <h4>Форма обратной связи</h4>
+                <div class="feedback-grid">
+                    <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+                    <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
+                    <textarea name="message" placeholder="Коротко опишите задачу" required></textarea>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Отправить заявку</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 ENDCE.RU — Оборудование и инжиниринг во взрывоопасных средах. Все права защищены.
+        </div>
+    </footer>
+
+    <div class="contact-modal" id="contactModal" aria-hidden="true">
+        <div class="modal-overlay" data-modal-close></div>
+        <div class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" type="button" data-modal-close aria-label="Закрыть форму">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="modal-title" id="modalTitle">Связаться с нами</h2>
+            <p class="modal-text">Выберите формат обращения.</p>
+            <div class="modal-tabs" role="tablist" aria-label="Тип обращения">
+                <button class="modal-tab is-active" type="button" data-modal-tab="application" role="tab" aria-selected="true">Подать заявку</button>
+                <button class="modal-tab" type="button" data-modal-tab="question" role="tab" aria-selected="false">Задать вопрос</button>
+            </div>
+
+            <form class="modal-form is-active" id="applicationModalForm" data-modal-form="application">
+                <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+                <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
+                <input type="email" name="email" placeholder="Email" autocomplete="email">
+                <select name="service" required>
+                    <option value="" disabled selected>Направление заявки</option>
+                    <option value="Сертификация и испытания продукции">Сертификация и испытания продукции</option>
+                    <option value="Оценка услуг">Оценка услуг</option>
+                    <option value="Оценка систем менеджмента качества">Оценка систем менеджмента качества</option>
+                </select>
+                <textarea name="message" placeholder="Кратко опишите задачу или объект оценки" required></textarea>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Отправить заявку</button>
+            </form>
+
+            <form class="modal-form" id="questionModalForm" data-modal-form="question">
+                <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+                <input type="tel" name="contact" placeholder="Телефон или email" autocomplete="tel" required>
+                <textarea name="question" placeholder="Ваш вопрос" required></textarea>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Отправить вопрос</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        document.querySelectorAll(".nav-trigger").forEach(function(trigger) {
+            trigger.setAttribute("aria-expanded", "false");
+            trigger.addEventListener("click", function() {
+                var navItem = trigger.closest(".nav-item");
+                if (!navItem) return;
+                var shouldOpen = !navItem.classList.contains("is-open");
+                document.querySelectorAll(".nav-item.is-open").forEach(function(openItem) {
+                    if (openItem !== navItem) {
+                        openItem.classList.remove("is-open");
+                        var openTrigger = openItem.querySelector(".nav-trigger");
+                        if (openTrigger) openTrigger.setAttribute("aria-expanded", "false");
+                    }
+                });
+                navItem.classList.toggle("is-open", shouldOpen);
+                trigger.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            });
+        });
+
+        document.querySelectorAll(".dropdown-menu a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                document.querySelectorAll(".nav-item.is-open").forEach(function(openItem) {
+                    openItem.classList.remove("is-open");
+                    var openTrigger = openItem.querySelector(".nav-trigger");
+                    if (openTrigger) openTrigger.setAttribute("aria-expanded", "false");
+                });
+            });
+        });
+
+        function sendMail(subject, lines) {
+            var body = lines.filter(Boolean).join("\n");
+            window.location.href = "mailto:info@endce.ru?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        }
+
+        var contactModal = document.getElementById("contactModal");
+        var lastFocusedElement = null;
+
+        function setModalMode(mode) {
+            var tabs = document.querySelectorAll("[data-modal-tab]");
+            var forms = document.querySelectorAll("[data-modal-form]");
+            tabs.forEach(function(tab) {
+                var isActive = tab.getAttribute("data-modal-tab") === mode;
+                tab.classList.toggle("is-active", isActive);
+                tab.setAttribute("aria-selected", isActive ? "true" : "false");
+            });
+            forms.forEach(function(form) {
+                form.classList.toggle("is-active", form.getAttribute("data-modal-form") === mode);
+            });
+        }
+
+        function openContactModal(mode) {
+            if (!contactModal) return;
+            lastFocusedElement = document.activeElement;
+            setModalMode(mode || "application");
+            contactModal.classList.add("is-open");
+            contactModal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+            var firstField = contactModal.querySelector(".modal-form.is-active input, .modal-form.is-active select, .modal-form.is-active textarea");
+            if (firstField) firstField.focus();
+        }
+
+        function closeContactModal() {
+            if (!contactModal) return;
+            contactModal.classList.remove("is-open");
+            contactModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("modal-open");
+            if (lastFocusedElement) lastFocusedElement.focus();
+        }
+
+        document.querySelectorAll("[data-modal-open]").forEach(function(button) {
+            button.addEventListener("click", function() {
+                openContactModal(button.getAttribute("data-modal-open"));
+            });
+        });
+
+        document.querySelectorAll("[data-modal-close]").forEach(function(button) {
+            button.addEventListener("click", closeContactModal);
+        });
+
+        document.querySelectorAll("[data-modal-tab]").forEach(function(tab) {
+            tab.addEventListener("click", function() {
+                setModalMode(tab.getAttribute("data-modal-tab"));
+            });
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape" && contactModal && contactModal.classList.contains("is-open")) {
+                closeContactModal();
+            }
+        });
+
+        var applicationModalForm = document.getElementById("applicationModalForm");
+        if (applicationModalForm) {
+            applicationModalForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                var formData = new FormData(applicationModalForm);
+                sendMail("Заявка с сайта ENDCE.RU", [
+                    "Тип обращения: Подать заявку",
+                    "Имя: " + formData.get("name"),
+                    "Телефон: " + formData.get("phone"),
+                    "Email: " + (formData.get("email") || "не указан"),
+                    "Направление: " + formData.get("service"),
+                    "Сообщение: " + formData.get("message")
+                ]);
+            });
+        }
+
+        var questionModalForm = document.getElementById("questionModalForm");
+        if (questionModalForm) {
+            questionModalForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                var formData = new FormData(questionModalForm);
+                sendMail("Вопрос с сайта ENDCE.RU", [
+                    "Тип обращения: Задать вопрос",
+                    "Имя: " + formData.get("name"),
+                    "Контакт: " + formData.get("contact"),
+                    "Вопрос: " + formData.get("question")
+                ]);
+            });
+        }
+
+        var feedbackForm = document.getElementById("feedbackForm");
+        if (feedbackForm) {
+            feedbackForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                var formData = new FormData(feedbackForm);
+                sendMail("Заявка с сайта ENDCE.RU", [
+                    "Имя: " + formData.get("name"),
+                    "Телефон: " + formData.get("phone"),
+                    "Сообщение: " + formData.get("message")
+                ]);
+            });
+        }
+    </script>
+</body>
+</html>
