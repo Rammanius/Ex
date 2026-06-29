@@ -1,0 +1,126 @@
+.registry-panel {
+    background: var(--bg-white);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: 0 10px 24px rgba(20, 31, 43, 0.04);
+    padding: 34px;
+}
+
+.registry-toolbar {
+    display: grid;
+    grid-template-columns: minmax(280px, 1.45fr) minmax(220px, 0.75fr) auto;
+    gap: 18px;
+    align-items: end;
+}
+
+.registry-toolbar.has-direction-filter {
+    grid-template-columns: minmax(280px, 1.35fr) minmax(190px, 0.65fr) minmax(220px, 0.75fr) auto;
+}
+
+.registry-field {
+    display: grid;
+    gap: 8px;
+}
+
+.registry-field span {
+    color: var(--hero-bg);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.registry-field input,
+.registry-field select {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px 14px;
+    color: var(--text-dark);
+    background: var(--bg-white);
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.registry-field input:focus,
+.registry-field select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.registry-reset {
+    min-height: 48px;
+    white-space: nowrap;
+}
+
+.registry-table-wrap {
+    margin-top: 20px;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+
+.registry-table {
+    width: 100%;
+    min-width: 980px;
+    border-collapse: collapse;
+    background: var(--bg-white);
+}
+
+.registry-table th,
+.registry-table td {
+    padding: 18px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+}
+
+.registry-table th {
+    background: var(--hero-bg);
+    color: var(--text-light);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.registry-table td {
+    color: var(--text-dark);
+    font-size: 0.94rem;
+}
+
+.registry-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.registry-empty-row td {
+    padding: 34px 18px;
+    text-align: center;
+    color: var(--text-muted);
+    background: #fbfcfd;
+}
+
+@media (max-width: 1200px) {
+    .registry-toolbar,
+    .registry-toolbar.has-direction-filter {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .registry-panel {
+        padding: 24px;
+    }
+
+    .registry-toolbar,
+    .registry-toolbar.has-direction-filter {
+        grid-template-columns: 1fr;
+    }
+
+    .registry-reset {
+        width: 100%;
+        justify-content: center;
+    }
+}
