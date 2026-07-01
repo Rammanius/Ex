@@ -1394,11 +1394,12 @@
                 <iframe class="footer-map" src="https://yandex.ru/map-widget/v1/?ll=37.641089%2C55.721605&amp;mode=routes&amp;rtext=55.730500%2C37.637700~55.712710%2C37.644478&amp;rtt=pd&amp;ruri=~&amp;z=14" title="Пеший маршрут от метро Павелецкая до офиса" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
-            <form class="footer-col feedback-form" id="feedbackForm">
+            <form class="footer-col feedback-form" id="feedbackForm" data-lead-form="feedback">
                 <h4>Форма обратной связи</h4>
                 <div class="feedback-grid">
                     <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
                     <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
+                    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
                     <textarea name="message" placeholder="Коротко опишите задачу" required></textarea>
                     <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Отправить заявку</button>
                 </div>
@@ -1423,10 +1424,10 @@
                 <button class="modal-tab" type="button" data-modal-tab="question" role="tab" aria-selected="false">Задать вопрос</button>
             </div>
 
-            <form class="modal-form is-active" id="applicationModalForm" data-modal-form="application">
+            <form class="modal-form is-active" id="applicationModalForm" data-modal-form="application" data-lead-form="application">
                 <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
                 <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
-                <input type="email" name="email" placeholder="Email" autocomplete="email">
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
                 <select name="service" required>
                     <option value="" disabled selected>Направление заявки</option>
                     <option value="Сертификация и испытания продукции">Сертификация и испытания продукции</option>
@@ -1437,9 +1438,10 @@
                 <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Отправить заявку</button>
             </form>
 
-            <form class="modal-form" id="questionModalForm" data-modal-form="question">
+            <form class="modal-form" id="questionModalForm" data-modal-form="question" data-lead-form="question">
                 <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
-                <input type="tel" name="contact" placeholder="Телефон или email" autocomplete="tel" required>
+                <input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required>
+                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
                 <textarea name="question" placeholder="Ваш вопрос" required></textarea>
                 <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Отправить вопрос</button>
             </form>
@@ -1594,5 +1596,6 @@
             });
         }
     </script>
+    <script src="assets/forms.js"></script>
 </body>
 </html>
